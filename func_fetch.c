@@ -91,5 +91,5 @@ void pall_hand(stack_t **stack, unsigned int line_number)
 {
 	(void)line_number;
 	if (*stack)
-		print_dlistint(*stack);
+		print_tlistint(*stack);
 }

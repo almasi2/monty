@@ -11,17 +11,17 @@ void swap_hand(stack_t **stack, unsigned int line_number)
 	stack_t *temp = *stack, *node = NULL;
 	int num;
 
-	if (dlistint_len(*stack) < 2)
+	if (tlistint_len(*stack) < 2)
 	{
 		dprintf(STDERR_FILENO, SWAP_FAIL, line_number);
 		free_all(1);
 		exit(EXIT_FAILURE);
 	}
 
-	temp = get_dnodeint_at_index(*stack, 0);
+	temp = get_tnodeint_at_index(*stack, 0);
 	num = temp->n;
-	delete_dnodeint_at_index(stack, 0);
-	node = insert_dnodeint_at_index(stack, 1, num);
+	delete_tnodeint_at_index(stack, 0);
+	node = insert_tnodeint_at_index(stack, 1, num);
 	if (!node)
 	{
 		dprintf(STDERR_FILENO, MALLOC_FAIL);
@@ -39,10 +39,10 @@ void add_hand(stack_t **stack, unsigned int line_number)
 {
 	int sum = 0;
 	stack_t *node = NULL;
-	stack_t *node_0 = get_dnodeint_at_index(*stack, 0);
-	stack_t *node_1 = get_dnodeint_at_index(*stack, 1);
+	stack_t *node_0 = get_tnodeint_at_index(*stack, 0);
+	stack_t *node_1 = get_tnodeint_at_index(*stack, 1);
 
-	if (dlistint_len(*stack) < 2)
+	if (tlistint_len(*stack) < 2)
 	{
 		dprintf(STDERR_FILENO, ADD_FAIL, line_number);
 		free_all(1);
@@ -50,9 +50,9 @@ void add_hand(stack_t **stack, unsigned int line_number)
 	}
 
 	sum = node_0->n + node_1->n;
-	delete_dnodeint_at_index(stack, 0);
-	delete_dnodeint_at_index(stack, 0);
-	node = add_dnodeint(stack, sum);
+	delete_tnodeint_at_index(stack, 0);
+	delete_tnodeint_at_index(stack, 0);
+	node = add_tnodeint(stack, sum);
 	if (!node)
 	{
 		dprintf(STDERR_FILENO, MALLOC_FAIL);

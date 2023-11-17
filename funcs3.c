@@ -15,10 +15,10 @@ void rotl_hand(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL)
 		return;
-	temp = get_dnodeint_at_index(*stack, 0);
+	temp = get_tnodeint_at_index(*stack, 0);
 	num = temp->n;
-	delete_dnodeint_at_index(stack, 0);
-	add_dnodeint_end(stack, num);
+	delete_tnodeint_at_index(stack, 0);
+	add_tnodeint_end(stack, num);
 }
 
 /**
@@ -29,14 +29,14 @@ void rotl_hand(stack_t **stack, unsigned int line_number)
 void rotr_hand(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp = *stack;
-	int num = 0, len = dlistint_len(*stack);
+	int num = 0, len = tlistint_len(*stack);
 
 	(void)line_number;
 
 	if (*stack == NULL)
 		return;
-	temp = get_dnodeint_at_index(*stack, len - 1);
+	temp = get_tnodeint_at_index(*stack, len - 1);
 	num = temp->n;
-	delete_dnodeint_at_index(stack, len - 1);
-	add_dnodeint(stack, num);
+	delete_tnodeint_at_index(stack, len - 1);
+	add_tnodeint(stack, num);
 }

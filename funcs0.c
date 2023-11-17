@@ -36,5 +36,5 @@ void pop_hand(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	delete_dnodeint_at_index(stack, 0);
+	delete_tnodeint_at_index(stack, 0);
 }
